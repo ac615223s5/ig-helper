@@ -50,6 +50,7 @@
 // @grant              GM_xmlhttpRequest
 // @connect            cdn.jsdelivr.net
 // @connect            i.instagram.com
+// @connect            instagram.com
 // @connect            raw.githubusercontent.com
 // @require            https://cdn.jsdelivr.net/npm/mediabunny@1.34.5/dist/bundles/mediabunny.min.cjs#sha256-wUFR+x2bDvpqgMAVGy2CvGvULyjTGvGy4UUAm8rae5U=
 // @require            https://code.jquery.com/jquery-4.0.0.min.js#sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=

@@ -50,6 +50,7 @@
 // @grant              GM_xmlhttpRequest
 // @connect            cdn.jsdelivr.net
 // @connect            i.instagram.com
+// @connect            instagram.com
 // @connect            raw.githubusercontent.com
 // @require            https://cdn.jsdelivr.net/npm/mediabunny@1.34.5/dist/bundles/mediabunny.min.cjs#sha256-wUFR+x2bDvpqgMAVGy2CvGvULyjTGvGy4UUAm8rae5U=
 // @require            https://code.jquery.com/jquery-4.0.0.min.js#sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=
@@ -5302,6 +5303,9 @@
         state.currentURL = location.href;
         state.GL_observer?.disconnect();
 
+        // Re-register delegated click handlers
+        registerPostClickHandlers();
+
         logger('main timer re-register completed');
     }
 
@@ -5405,7 +5409,9 @@
     }
 
     /**
+     * triggerReactClickHandler
      * @description Trigger React onClick event handler for the given element.
+     *
      * @param {HTMLElement} el 
      */
     function triggerReactClickHandler(el) {
@@ -5428,7 +5434,9 @@
     };
 
     // /**
+    //  * getPointerElement
     //  * @description Get the element at the pointer position and check if it is the target element or if it is covered by another element.
+    //  *
     //  * @param {JQuery<HTMLElement>} $target 
     //  * @param {number} clientX
     //  * @param {number} clientY
